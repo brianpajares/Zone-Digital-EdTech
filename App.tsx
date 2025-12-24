@@ -242,7 +242,7 @@ const App = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
-                {/* Primary: Shop */}
+                {/* Primary: Shop - Keeps Blue style */}
                 <Button 
                    size="lg" 
                    className="w-full sm:w-auto bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/30 border-none px-8 text-lg h-14 rounded-xl" 
@@ -251,20 +251,22 @@ const App = () => {
                   <Book className="mr-2 w-5 h-5" /> Ver Catálogo
                 </Button>
 
-                {/* Secondary: Free Chapter */}
+                {/* Secondary: Free Chapter - FIXED CONTRAST */}
+                {/* Changed: Force text-slate-950 (black) and bold to ensure visibility on white background */}
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-100 shadow-lg px-8 text-lg h-14 border-none rounded-xl" 
+                  className="w-full sm:w-auto bg-white text-slate-950 font-bold hover:bg-slate-200 shadow-lg px-8 text-lg h-14 border-none rounded-xl" 
                   onClick={() => openLeadModal(undefined, 'pdf')}
                 >
                   <BookOpen className="mr-2 w-5 h-5 text-brand-600" /> Capítulo Gratis
                 </Button>
 
-                {/* Tertiary: Podcast */}
+                {/* Tertiary: Podcast - FIXED CONTRAST */}
+                {/* Changed: Force text-white and lighter hover effect for better visibility on dark bg */}
                 <Button 
                   size="lg" 
                   variant="ghost"
-                  className="w-full sm:w-auto text-slate-300 hover:bg-white/10 hover:text-white border border-white/20 px-6 h-14 rounded-xl" 
+                  className="w-full sm:w-auto text-white font-semibold border border-white/20 hover:bg-white/10 hover:border-white/40 px-6 h-14 rounded-xl backdrop-blur-sm" 
                   onClick={() => openLeadModal(undefined, 'audio')}
                 >
                   <Headphones className="mr-2 w-5 h-5" /> Escuchar Podcast
@@ -652,3 +654,11 @@ const App = () => {
         isOpen={isLeadModalOpen} 
         onClose={() => setIsLeadModalOpen(false)} 
         initialBookId={modalBookId}
+        initialMode={modalMode}
+      />
+
+    </div>
+  );
+};
+
+export default App;
