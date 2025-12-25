@@ -29,6 +29,7 @@
             animation: {
               'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
               'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             },
             keyframes: {
               fadeInUp: {
@@ -45,21 +46,25 @@
       }
     </script>
     <style>
-      /* Custom scrollbar for premium feel */
+      /* Ultra-thin, premium scrollbar - refined for subtlety */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 3px; 
+        height: 3px;
       }
       ::-webkit-scrollbar-track {
-        background: #0f172a;
+        background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 4px;
+        background: rgba(203, 213, 225, 0.5); /* Semi-transparent Slate-300 */
+        border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
+        background: rgba(148, 163, 184, 0.8); /* Slate-400 */
       }
+      /* Firefox */
       html {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(203, 213, 225, 0.5) transparent;
         scroll-behavior: smooth;
       }
     </style>

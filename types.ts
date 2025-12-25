@@ -10,6 +10,7 @@ export interface Product {
   tagline: string;
   highlights: string[];
   longDescription: string;
+  gumroadUrl?: string;
 }
 
 export interface Bundle {
@@ -19,6 +20,7 @@ export interface Bundle {
   productIds: string[];
   discount: number; // Percentage (e.g., 0.20)
   coverImage: string;
+  gumroadUrl?: string;
 }
 
 export interface CartItem {
